@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Validation Form</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+<div class="wrapper">
+<h1> Registration Form </h1>
+<p id="astrix">*Required Fields</p>
+
+<div id="formDiv">
+<form name="dataForm" action="" method="post" onSubmit="return validateForm(this);">
+
+<div class="row">
+<label for="fName">First Name:*</label>
+<input type="text" id="fName" placeholder="First Name">
+<!--<span id="fNameSpan" class="errorDiv"></span>-->
+</div>
+
+<div class="row">
+<label for="lName">Last Name:* </label>
+<input type="text" id="lName" placeholder="Last Name">
+<!--<span id="lNameSpan" class="errorDiv"></span>-->
+</div>
+
+<div class="row">
+<label for="address">Address:*</label>
+<input type="text" id="address" placeholder="Address">
+<!--<div id="addressDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="city">City:*</label>
+<input type="text" id="city" placeholder="City">
+<!--<div id="cityDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="state">State:*</label>
+<select class="state" name="state">
+<option value="default">--Select--</option>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District Of Columbia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+</select>
+<!--<div id="stateDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="zip">Zip Code:*</label>
+<input type="text" id="zip" size="5" placeholder="Zip Code" pattern="[0-9]{5}">
+<!--<div id="zipDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="phone">Phone Number:*</label>
+<input type="tel" name="areacode" size="3" placeholder="xxx" pattern="[0-9]{3}">
+<input type="tel" name="number" size="8" placeholder="xxx-xxxx" pattern="[0-9]{3}-[0-9]{4}">
+<!--<div id="phoneDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="email">Email:*</label>
+<input type="text" id="email" placeholder="Email">
+<!--<div id="emailDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="cEmail">Confirm Email:*</label>
+<input type="text" id="cEmail" placeholder="Confirm Email">
+<!--<div id="cEmailDiv" class="errorDiv"></div>-->
+</div>
+
+<div class="row">
+<label for="meal"> Meal Preference*: </label>
+	<input type="radio" value="Vegan" name="meal">Vegan
+	<input type="radio" value="Vegetarian" name="meal">Vegetarian
+	<input type="radio" value="Non-Vegetarian" name="meal">Non-Vegetarian
+<br>
+	<i>(please select one)</i>
+<!--	<div id="mealDiv" class="errorDiv"></div>-->
+ </div>
+
+<div class="row">
+<label for="contact">Contact Method:* </label>
+		<input type ="checkbox" value="phone" name="contact">Phone
+        <input type ="checkbox" value="email" name="contact"> Email
+        <input type ="checkbox" value="mail" name="contact"> Mail
+        <input type ="checkbox" value="linkedin" name="contact"> Linkedin
+	<br><i>(select minimum of two)</i>	
+	<!--<div id="contactDiv" class="errorDiv"></div>-->
+  </div>
+
+<div class="row">
+<label for="comments">Comments:</label>
+<br>
+ <textarea name="comments" rows="8" cols="80"></textarea>
+</div>
+
+<button type="submit" name="submit">Submit</button>
+<button type="reset" name="reset">Reset</button>
+</form>
+
+</div> <!--end form wrapper-->
+</div> <!--end wrapper div-->
+
+<script src="js/main.js"></script>
+</body>
+</html>
