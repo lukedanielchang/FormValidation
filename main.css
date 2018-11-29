@@ -43,5 +43,5 @@ input[type=text]:focus, [type=tel]:focus, textarea:focus, select:focus{
 
 /*style error*/
 .error{
-	background-color: #f4c2c2;
+	color: #f4c2c2;
 }

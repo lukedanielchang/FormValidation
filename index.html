@@ -14,30 +14,30 @@
 <p id="astrix">*Required Fields</p>
 
 <div id="formDiv">
-<form name="dataForm" action="" method="post" onSubmit="return validateForm(this);">
+<form name="dataForm" action="" method="post" onSubmit="return validateForm(this)">
 
 <div class="row">
 <label for="fName">First Name:*</label>
 <input type="text" id="fName" placeholder="First Name">
-<!--<span id="fNameSpan" class="errorDiv"></span>-->
+<div id="fNameError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="lName">Last Name:* </label>
 <input type="text" id="lName" placeholder="Last Name">
-<!--<span id="lNameSpan" class="errorDiv"></span>-->
+<div id="lNameError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="address">Address:*</label>
 <input type="text" id="address" placeholder="Address">
-<!--<div id="addressDiv" class="errorDiv"></div>-->
+<div id="addressError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="city">City:*</label>
 <input type="text" id="city" placeholder="City">
-<!--<div id="cityDiv" class="errorDiv"></div>-->
+<div id="cityError" class="error">
 </div>
 
 <div class="row">
@@ -96,32 +96,32 @@
 <option value="WI">Wisconsin</option>
 <option value="WY">Wyoming</option>
 </select>
-<!--<div id="stateDiv" class="errorDiv"></div>-->
+<div id="stateError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="zip">Zip Code:*</label>
-<input type="text" id="zip" size="5" placeholder="Zip Code" pattern="[0-9]{5}">
-<!--<div id="zipDiv" class="errorDiv"></div>-->
+<input type="text" id="zip" size="5" placeholder="Zip Code">
+<div id="zipError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="phone">Phone Number:*</label>
 <input type="tel" name="areacode" size="3" placeholder="xxx" pattern="[0-9]{3}">
 <input type="tel" name="number" size="8" placeholder="xxx-xxxx" pattern="[0-9]{3}-[0-9]{4}">
-<!--<div id="phoneDiv" class="errorDiv"></div>-->
+<div id="phoneError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="email">Email:*</label>
 <input type="text" id="email" placeholder="Email">
-<!--<div id="emailDiv" class="errorDiv"></div>-->
+</div id="emailError" class="error"></div>
 </div>
 
 <div class="row">
 <label for="cEmail">Confirm Email:*</label>
 <input type="text" id="cEmail" placeholder="Confirm Email">
-<!--<div id="cEmailDiv" class="errorDiv"></div>-->
+<div id="cEmailError" class="error"></div>
 </div>
 
 <div class="row">
@@ -131,7 +131,7 @@
 	<input type="radio" value="Non-Vegetarian" name="meal">Non-Vegetarian
 <br>
 	<i>(please select one)</i>
-<!--	<div id="mealDiv" class="errorDiv"></div>-->
+<div id="mealError" class="error"></div>
  </div>
 
 <div class="row">
@@ -141,7 +141,7 @@
         <input type ="checkbox" value="mail" name="contact"> Mail
         <input type ="checkbox" value="linkedin" name="contact"> Linkedin
 	<br><i>(select minimum of two)</i>	
-	<!--<div id="contactDiv" class="errorDiv"></div>-->
+	<div id="contactError" class="error"></div>
   </div>
 
 <div class="row">
