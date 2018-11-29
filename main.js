@@ -1,235 +1,246 @@
-function validateForm(dataForm){
-var fNameData = document.forms["dataForm"]["fName"].value;
-var lNameData = document.forms["dataForm"]["lName"].value;
-var addressData = document.forms["dataForm"]["address"].value;
-var cityData = document.forms["dataForm"]["city"].value;
-var stateData = document.forms["dataForm"]["state"].value;
-var zipData = document.forms["dataForm"]["zip"].value;
-var areacodeData = document.forms["dataForm"]["areacode"].value;
-var numberData = document.forms["dataForm"]["number"].value;
-var emailData = document.forms["dataForm"]["email"].value;
-var cEmailData = document.forms["dataForm"]["cEmail"].value;
-var mealData = document.forms["dataForm"]["meal"].value;
-var contactData = document.forms["dataForm"]["contact"].value;
-var alphaExp = /^[a-zA-Z]+$/;
+function validateForm(dataForm) {
+    reason = "";
+    reason += validateFName(dataForm.fName);
+	reason += validateLName(dataForm.lName);
+	reason += validateAddress(dataForm.address);
+	reason += validateCity(dataForm.city);
+	reason += validateState(dataForm.state);
+	reason += validateZip(dataForm.zip);
+	reason += validateAreacode(dataForm.areacode);
+	
+   /* reason += validateEmail(contact.email);
+    reason += validatePhone(contact.phone);
+    reason += validatePet(contact.pet);
+    reason += validateNumber(contact.number);
+    reason += validateDisclaimer(contact.disclaimer);*/
 
+    console.log(reason);
+    if (reason.length != null) {
 
-//checkFirstName(fNameData);
-if (fNameData!="" && fNameData.match(alphaExp)){
-		document.getElementById("fName").classList.remove("error");
-		return true;
-	}
-	else{
-		document.getElementById("fName").classList.add("error");
-		return false;
-	}
-}
-//check for empty fName input
-/*	if (fNameData==""){
-		document.getElementById("fName").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("fName").classList.remove("error");
-	}
-
-//check for empty lName input
-if(lNameData===""){
-	document.getElementById("lName").classList.add("error");
-	return false;
-}
-	else{
-		document.getElementById("lName)".classList.remove("error");
-	}
-*/
-//checklName(lNameData);
-//checkAddress(addressData);
-//checkCity(cityData);
-//checkState(stateData);
-//checkZip(zipData);
-//checkAreaCode(areacodeData);
-//checkNumber(numberData);
-//checkEmail(emailData);
-//checkEmail(cEmailData);
-//compareEmail(emailData, cEmailData);
-//checkMeal(mealData);
-//checkContactSelection(contactData);
-
-/*function to check the first name*/
-/*function AlphaOnlyValidation(nameData){
-	if(nameData==="a"){
-		return false;
-	}
-	else{
-	console.log("okay?");
-	return;
-	}
-}
-*/
-/*function to check the last name
-function checklName(lnameData){
-	if (nameData==""){
-		document.getElementById("lName").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("lName").classList.remove("error");
-	}
-}
-*/
-/*function to check the address name
-function checkAddress(nameData){
-	if (nameData==""){
-		document.getElementById("address").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("address").classList.remove("error");
-	}
-}
-*/
-/*function to check the city
-function checkCity(nameData){
-	if (nameData==""){
-		document.getElementById("city").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("city").classList.remove("error");
-	}
-}*/
-/*function checks state selection
-function checkState(nameData){
-	if(nameData=="default"){
-		document.getElementById("state").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("state").classList.remove("error");
-		return true;
-	}
-}*/
-
-/*function to check the zip
-function checklName(nameData){
-	if (nameData=="" || nameData.length>5 || nameData.length<5){
-		document.getElementById("zip").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("zip").classList.remove("error");
-		return true;
-	}
-}
-*/
-/*function to check the areacode
-function checkAreaCode(nameData){
-	if (nameData=="" || nameData.length>3 || nameData.length<3){
-		document.getElementById("areacode").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("areacode").classList.remove("error");
-		return true;
-	}
-}
-*/
-/*function to check the zip
-function checkAreaCode(nameData){
-	if (nameData=="" || nameData.length>8|| nameData.length<8 || !NaN(nameData)){
-		document.getElementById("number").classList.add("error");
-		return false;
-	}
-	else{
-		document.getElementById("number").classList.remove("error");
-		return true;
-	}
+        return false;
+    } else {
+        return false;
+    }
 }
 
+// validate fName field
+function validateFName(fName) {
+    var error = "";
 
-}*/
+    if (fName.value == ""){
+        fName.style.background = '#f4c2c2';
+        document.getElementById('fNameError').innerHTML = "The required field has not been filled in";
+        var error = "1";
+    } else {
+        fName.style.background = 'White';
+        document.getElementById('fNameError').innerHTML = '';
+    }
+    return error;
+}
 
-/*var elements = document.querySelectorAll("#dataForm input[type=text");
-	for (var i=0; element; element = elements[i++]){
-		if (elements[i].value===""){
-			element.classList.add("error");
-			return false;
+function validateLName(lName) {
+    var error = "";
+
+    if (lName.value == ""){
+        lName.style.background = '#f4c2c2';
+        document.getElementById('lNameError').innerHTML = "The required field has not been filled in";
+        var error = "2";
+    } else {
+        lName.style.background = 'White';
+        document.getElementById('lNameError').innerHTML = '';
+    }
+    return error;
+}
+
+//Validate Address
+function validateAddress(address) {
+    var error = "";
+
+    if (address.value == ""){
+        address.style.background = '#f4c2c2';
+        document.getElementById('addressError').innerHTML = "The required field has not been filled in";
+        var error = "3";
+    } else {
+        lName.style.background = 'White';
+        document.getElementById('addressError').innerHTML = '';
+    }
+    return error;
+}
+
+//Validate city
+function validateCity(city) {
+    var error = "";
+
+    if (city.value == ""){
+        city.style.background = '#f4c2c2';
+        document.getElementById('cityError').innerHTML = "The required field has not been filled in";
+        var error = "4";
+    } else {
+        city.style.background = 'White';
+        document.getElementById('cityError').innerHTML = '';
+    }
+    return error;
+}
+
+//Validate state selection
+function validateState(state) {
+    var error = "";
+
+    if (state.value == 'default'){
+        state.style.background = '#f4c2c2';
+        document.getElementById('stateError').innerHTML = "The required field has not been filled in";
+        var error = "5";
+    } else {
+        state.style.background = 'White';
+        document.getElementById('stateError').innerHTML = '';
+    }
+    return error;
+}
+
+//Validate zip selection
+function validateZip(zip) {
+	var intZip = parseInt(zip, 10);
+    var error = "";
+
+    if (zip.value == ""){
+        zip.style.background = '#f4c2c2';
+        document.getElementById('zipError').innerHTML = "The required field has not been filled in";
+        var error = "6";
+    } 
+		else if(intZip === NaN){
+		zip.style.background = '#f4c2c2';
+        document.getElementById('zipError').innerHTML = "The required field has not been filled in";
+        var error = "7";	
+		console.log(typeof intZip);
+		console.log(intZip);
 		}
-	}
-}
-//validate first name is not empty
-if(fNameData==""){
-	document.getElementById("fName").classList.add("error");
-	return false;
-	}
-else if(!re.test(dataForm.fName.value)){
-	document.getElementById("fName").classList.add("error");
-	return false;
-}
-else{
-	document.getElementById("fName").classList.remove("error");
+	else {
+        zip.style.background = 'White';
+        document.getElementById('zipError').innerHTML = '';
+    }
+    return error;
 }
 
-//validate last name is not empty	
-if(lNameData==""){
-	document.getElementById("lName").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("lName").classList.remove("error");
+//validate areacodefunction validateZip(zip) {
+	var intArea = parseInt(areacode, 10);
+    var error = "";
+
+    if (areacode.value == "" || areacode.length>3 || areacode < 3){
+        areacode.style.background = '#f4c2c2';
+        document.getElementById('phoneError').innerHTML = "The required field has not been filled in";
+        var error = "6";
+    } 
+		else if(intArea === NaN){
+		zip.style.background = '#f4c2c2';
+        document.getElementById('zipError').innerHTML = "The required field has not been filled in";
+        var error = "8";	
+		}
+	else {
+        zip.style.background = 'White';
+        document.getElementById('phoneError').innerHTML = '';
+    }
+    return error;
 }
 
-//validate address is not empty	
-if(addressData==""){
-	document.getElementById("address").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("address").classList.remove("error");
-}		
 
-//validate city is not empty	
-if(cityData==""){
-	document.getElementById("city").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("city").classList.remove("error");
+/*
+// validate email as required field and format
+function trim(s) {
+    return s.replace(/^\s+|\s+$/, '');
 }
 
-//validate state was selected
-if(stateData=="default"){
-	document.getElementById("state").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("state").classList.remove("error");
-}		
+function validateEmail(email) {
+    var error = "";
+    var temail = trim(email.value); // value of field with whitespace trimmed off
+    var emailFilter = /^[^@]+@[^@.]+\.[^@]*\w\w$/;
+    var illegalChars = /[\(\)\<\>\,\;\:\\\"\[\]]/;
 
-//validate zip is not empty	
-if(isNaN(zipData) || zipData=="" || zipData.length>5 || zipData.length<5){
-	document.getElementById("zip").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("zip").classList.remove("error");
-}	
-
-//validate phone area is not empty	
-if(isNaN(areacodeData) || areacodeData==""){
-	document.getElementById("area").classList.add("error");
-		return false;
-}
-else{
-	document.getElementById("area").classList.remove("error");
+    if (email.value == "") {
+        email.style.background = 'Red';
+        document.getElementById('email-error').innerHTML = "Please enter an email address.";
+        var error = "2";
+    } else if (!emailFilter.test(temail)) { //test email for illegal characters
+        email.style.background = 'Red';
+        document.getElementById('email-error').innerHTML = "Please enter a valid email address.";
+        var error = "3";
+    } else if (email.value.match(illegalChars)) {
+        email.style.background = 'Red';
+        var error = "4";
+        document.getElementById('email-error').innerHTML = "Email contains invalid characters.";
+    } else {
+        email.style.background = 'White';
+        document.getElementById('email-error').innerHTML = '';
+    }
+    return error;
 }
 
-//validate phone number is not empty	
-if(isNan(numberData) || numberData==""){
-	document.getElementById("number").classList.add("error");
-		return false;
+// validate phone for required and format
+function validatePhone(phone) {
+    var error = "";
+    var stripped = phone.value.replace(/[\(\)\.\-\ ]/g, '');
+
+    if (phone.value == "") {
+        document.getElementById('phone-error').innerHTML = "Please enter a phone number";
+        phone.style.background = 'Red';
+        var error = '6';
+    } else if (isNaN(parseInt(stripped))) {
+        var error = "5";
+        document.getElementById('phone-error').innerHTML = "The phone number contains illegal characters.";
+        phone.style.background = 'Red';
+    } else if (stripped.length < 10) {
+        var error = "6";
+        document.getElementById('phone-error').innerHTML = "The phone number is too short.";
+        phone.style.background = 'Red';
+    } else {
+        phone.style.background = 'White';
+        document.getElementById('phone-error').innerHTML = '';
+    }
+    return error;
 }
-else{
-	document.getElementById("number").classList.remove("error");
+
+function validatePet(pet) {
+    if ((contact.pet[0].checked == false) && (contact.pet[1].checked == false) && (contact.pet[2].checked == false)) {
+        document.getElementById('pet-error').innerHTML = "Pet required";
+        var error = "2";
+    } else {
+        document.getElementById('pet-error').innerHTML = '';
+    }
+    return error;
 }
+
+function validateNumber(number) {
+    var num = document.forms["contact"]["number"];
+    var y = num.value;
+    if (!isNaN(y)) {
+
+        //alert('va');
+
+        if (y < 0 || y > 50) {
+            //Wrong
+            number.style.background = 'Red';
+            document.getElementById("number-error").innerHTML = "Must be between 0 and 50.";
+            var error = "10";
+        } else {
+            //Correct
+            number.style.background = 'White';
+            document.getElementById("number-error").innerHTML = "";
+        }
+        return error;
+    } else {
+        document.getElementById("number-error").innerHTML = "Must be a number.";
+        var error = "3";
+    }
+    return error;
+}
+
+function validateDisclaimer(disclaimer) {
+    var error = "";
+
+    if (document.getElementById("disclaimer").checked === false) {
+        document.getElementById('disclaimer-error').innerHTML = "Required";
+        var error = "4";
+    } else {
+        document.getElementById('disclaimer-error').innerHTML = '';
+    }
+    return error;
 }*/
